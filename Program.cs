@@ -32,7 +32,9 @@ namespace ProductReviewManagement
             };
                         //Management.TopThreeByRating(list);    
                         //Management.RetrieveAllRecords(list);
-                          Management.retriveCountOfReviewForEachProductID(list);
+                        //Management.retriveCountOfReviewForEachProductID(list);
+                          Management.retriveOnlyProductIDAndReview(list);
+
             
         }
     }
