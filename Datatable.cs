@@ -59,8 +59,11 @@ namespace ProductReviewManagement
                     };
             foreach (var element in Records)
             {
+                if(element.islike.Contains("True"))
 
+                {
                 Console.WriteLine(element);
+                }
             }
         }
     }
