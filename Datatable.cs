@@ -48,22 +48,28 @@ namespace ProductReviewManagement
         }
         public static void Display(DataTable data)
         {
-            var Records = from pd in data.AsEnumerable()
-                    select new
-                    {
-                        productid = pd.Field<string>("ProductID"),
-                        userid = pd.Field<string>("UserID"),
-                        rating = pd.Field<string>("Rating"),
-                        review = pd.Field<string>("Review"),
-                        islike = pd.Field<string>("isLike")
-                    };
+            //var Records = from pd in data.AsEnumerable()
+            //        select new
+            //        {
+            //            productid = pd.Field<string>("ProductID"),
+            //            userid = pd.Field<string>("UserID"),
+            //            rating = pd.Field<string>("Rating"),
+            //            review = pd.Field<string>("Review"),
+            //            islike = pd.Field<string>("isLike")
+            //        };
+
+            var Records = data.AsEnumerable().GroupBy(x => x.Field<int>("ProductID"))
+                .Select(x => new
+                {
+                    ProductID = x.Key,
+                    Rating = x.Average(x => x.Field<int>("Rating"))
+                }).ToList();
+
             foreach (var element in Records)
             {
-                if(element.islike.Contains("True"))
-
-                {
+                
                 Console.WriteLine(element);
-                }
+                
             }
         }
     }
