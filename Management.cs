@@ -58,5 +58,15 @@ namespace ProductReviewManagement
                 Console.WriteLine("ProductID :{0},  Review :{1}", element.ProductID, element.Review);
             }
         }
+        
+        public static void retriveOnlyProductIDAndReviewAllRecordsUsingSelect(List<ProductReview> ele)
+        {
+            var Records = ele.AsEnumerable().Select(x => new { productid = x.ProductID, review = x.Review });
+
+            foreach (var element in Records)
+            {
+                Console.WriteLine("ProductID :{0},  Review :{1}", element.productid, element.review);
+            }
+        }
     }
 }

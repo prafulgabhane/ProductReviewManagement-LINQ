@@ -34,7 +34,8 @@ namespace ProductReviewManagement
                         //Management.RetrieveAllRecords(list);
                         //Management.retriveCountOfReviewForEachProductID(list);
                         //Management.retriveOnlyProductIDAndReview(list);
-                        Management.skipTopFiveRecordAndDisplayOther(list);
+                        //Management.skipTopFiveRecordAndDisplayOther(list);
+                          Management.retriveOnlyProductIDAndReviewAllRecordsUsingSelect(list);
 
 
             
