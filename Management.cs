@@ -1,4 +1,4 @@
-
+/*
 namespace ProductReviewManagement
 {
     public class Management
@@ -69,4 +69,4 @@ namespace ProductReviewManagement
             }
         }
     }
-}
+}*/
