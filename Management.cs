@@ -6,7 +6,10 @@ namespace ProductReviewManagement
         public static void TopThreeByRating(List<ProductReview> productReview)
         {
 
-            var Record = (from productreview in productReview orderby productreview.Rating descending select productreview).Take(3);
+            var Record = from productreview in productReview
+                         where (productreview.ProductID == 1 || productreview.ProductID == 4 || productreview.ProductID == 9)
+                         && productreview.Rating > 3
+                         select productreview;
 
             foreach (var element in Record)
             {
